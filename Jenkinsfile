@@ -40,7 +40,7 @@ pipeline {
              
             steps 
    {
-                sh "docker run -d -p 8090:8080 opsgauraw/testwebapp:latest"
+                sh "docker run -d -p 8085:8080 opsgauraw/testwebapp:latest"
  
             }
         }
