@@ -28,10 +28,10 @@ pipeline {
           
             steps {
           //sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'      
-        withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
+       // withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
           sh  'docker push opsgauraw/testwebapp:latest'
         //  sh  'docker push opsgauraw/testwebapp:latest' 
-        }
+       // }
                   
           }
         }
