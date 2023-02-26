@@ -1,5 +1,5 @@
 <html>
 <body>
-<h1 style="color:green;">BEST BUILD</h1>
+<h1 style="color:green;">SUCCESSFUL APPLICATION RUNNING</h1>
 </body>
 </html>
