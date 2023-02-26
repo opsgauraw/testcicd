@@ -40,15 +40,17 @@ pipeline {
              
             steps 
    {
+                sh "docker stop $(docker ps -a | grep 8085 | awk '{print $1}')"
                 sh "docker run -d -p 8085:8080 opsgauraw/testwebapp:latest"
  
             }
         }
- stage('Run Docker container on remote hosts') {
+ stage('Run Docker container on Kubernetes') {
              
             steps {
                 echo "We will try this also"
                 sh "kubectl apply -f kubernetes.yml"
+                sh "kubectl apply -f service-definition.yml"
                 //sh "docker -H ssh://jenkins@172.31.28.25 run -d -p 8003:8080 opsgauraw/testwebapp"
  
             }
