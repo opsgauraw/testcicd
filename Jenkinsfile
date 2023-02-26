@@ -18,7 +18,7 @@ pipeline {
            steps {
               
                 sh 'docker build -t opsgauraw/testwebapp .' 
-                sh 'docker tag testwebapp opsgauraw/testwebapp:latest'
+                sh 'docker tag opsgauraw/testwebapp opsgauraw/testwebapp:latest'
                 //sh 'docker tag testwebapp opsgauraw/testwebapp:$BUILD_NUMBER'
                
           }
@@ -39,7 +39,7 @@ pipeline {
              
             steps 
    {
-                sh "docker run -d -p 8090:8080 opsgauraw/testwebapp"
+                sh "docker run -d -p 8090:8080 opsgauraw/testwebapp:latest"
  
             }
         }
