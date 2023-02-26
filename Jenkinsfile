@@ -10,10 +10,8 @@ pipeline{
     stages{
         stage("Checkout"){
             steps{
-               git clone https://github.com/opsgauraw/testcicd.git
+               sh "git clone https://github.com/opsgauraw/testcicd.git"
             }
         }
-        
-       
         }
     }
