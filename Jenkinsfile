@@ -49,6 +49,7 @@ pipeline {
              
             steps {
                 echo "We will try this also"
+                sh "kubectl delete pod \$(kubectl get pods | grep tomcat | awk '{print \$1}')"
                 sh "kubectl apply -f kubernetes.yml"
                 sh "kubectl apply -f service-definition.yml"
                 //sh "docker -H ssh://jenkins@172.31.28.25 run -d -p 8003:8080 opsgauraw/testwebapp"
