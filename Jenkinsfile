@@ -48,6 +48,7 @@ pipeline {
              
             steps {
                 echo "We will try this also"
+                sh "kubectl apply -f kubernetes.yml"
                 //sh "docker -H ssh://jenkins@172.31.28.25 run -d -p 8003:8080 opsgauraw/testwebapp"
  
             }
